@@ -117,9 +117,10 @@ all( x[-length(x)]>=x[-1] ) )       #конструкцией 'x[-1]' исклю
 **1:** *Пусть у нас есть n предметов, из которых нужно выбрать k штук.Запрограммируйте оба этих значения в виде функции, зависящей от n и k. Аргумент with_repetitions будет отвечать за вариант подсчёта: если он FALSE, то пусть считается количество сочетаний, а если TRUE, то сочетаний с повторениями.*
 
 ```{r}
-combin_count <- function(n, k, with_repretitions = FALSE) {
-
+combin_count <- function(n, k, with_repetitions = FALSE) {
+ if (with_repetitions){                                 #если выражение FALSE
+   factorial(n+k-1)/factorial(k)/factorial(n-1)
+ } else factorial(n)/factorial(k)/factorial(n-k)
 }
-
 ```
 
