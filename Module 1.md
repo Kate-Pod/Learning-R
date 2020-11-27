@@ -30,10 +30,10 @@ decreasing = TRUE)                     #упорядочиваем по убыв
 #### Условия `if` и `ifelse`
 
 if (condition) {do smth} else {do another thing} 
->-нельзя переносить `else` на другую строку  
+>нельзя переносить `else` на другую строку  
 
 ifelse(condition,action,another action) 
->-`print` можно не писать
+>`print` можно не писать
 
 *Примеры:*
 ```{r}
