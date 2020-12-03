@@ -97,6 +97,6 @@ top_sums <- rowSums(subset(new_table, select = c(complaints,raises,advance))) #�
 names(which.max(top_sums)) # имя максимального значения в векторе
 }
 ```
-
+> any(!**complete.cases**(df)) - есть ли пропуски в датафрейме
 
 
