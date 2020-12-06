@@ -101,7 +101,8 @@ names(which.max(top_sums)) # имя максимального значения 
 
 
 **2:** *...Cкачайте файл по ссылке, добавьте новые данные в общий дата фрейм и повторите подсчёт общего покрытия, добавив переменную total_coverage. В качестве ответа пришлите величину среднего покрытия с точностью до второго знака: X.XX*
-``{r}
+
+```{r}
 df1 <- read.csv('https://raw.githubusercontent.com/tonytonov/Rcourse/master/R%20programming/avianHabitat.csv')
 df2 <- read.csv(sep = ";", skip = 5, header = T, comment.char = "%",
                 quote = "", na.strings = "Don't remember",
