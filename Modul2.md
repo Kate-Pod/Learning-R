@@ -100,3 +100,22 @@ names(which.max(top_sums)) # имя максимального значения 
 > any(!**complete.cases**(df)) - есть ли пропуски в датафрейме
 
 
+**2:** *...Cкачайте файл по ссылке, добавьте новые данные в общий дата фрейм и повторите подсчёт общего покрытия, добавив переменную total_coverage. В качестве ответа пришлите величину среднего покрытия с точностью до второго знака: X.XX*
+``{r}
+df1 <- read.csv('https://raw.githubusercontent.com/tonytonov/Rcourse/master/R%20programming/avianHabitat.csv')
+df2 <- read.csv(sep = ";", skip = 5, header = T, comment.char = "%",
+                quote = "", na.strings = "Don't remember",
+                file = 'https://raw.githubusercontent.com/tonytonov/Rcourse/master/R%20programming/avianHabitat2.csv')
+names(df1)
+names(df2)
+df2$Observer <- 'CL'
+df2 <- df2[,c(1,17,2:16)]     # Переносим 17 столбец на место второго
+newdf <- rbind(df1,df2)
+head(newdf)
+coverage_var <- names(newdf)[-(1:4)][c(T,F)]
+newdf$total_coverage <- rowSums(newdf[,coverage_var])
+mean(newdf$total_coverage)
+
+```
+
+
